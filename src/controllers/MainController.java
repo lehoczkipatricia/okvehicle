@@ -45,6 +45,14 @@ public class MainController {
             this.mainWindow.vehicleModel.addRow(new Object[] { ordinal, brand, year });
         });
     }
+    public void getSetTexts(String ordinal, String brand, String year) {
+        ordinal = this.mainWindow.ordinalField.getText();
+        brand = this.mainWindow.brandField.getText();
+        year = this.mainWindow.yearField.getText();
+        this.mainWindow.ordinalField.setText("");
+        this.mainWindow.brandField.setText("");
+        this.mainWindow.yearField.setText("");
+    }
 
     public void addEventToDelButton(){
         // TODO: Törlés megvalósítása
@@ -67,13 +75,6 @@ public class MainController {
         }
     }
 
-    public void getSetTexts(String ordinal, String brand, String year) {
-        ordinal = this.mainWindow.ordinalField.getText();
-        brand = this.mainWindow.brandField.getText();
-        year = this.mainWindow.yearField.getText();
-        this.mainWindow.ordinalField.setText("");
-        this.mainWindow.brandField.setText("");
-        this.mainWindow.yearField.setText("");
-    }
+    
 
 }
