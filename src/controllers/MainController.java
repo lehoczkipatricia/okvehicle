@@ -37,6 +37,14 @@ public class MainController {
         addEventToSaveButton();
         
     }
+    
+    public void loadVehicleList(){
+        this.loadVehicle = new LoadVehicle();
+        ArrayList<Vehicle> vehicleList = this.loadVehicle.load();
+        for (Vehicle vehicle : vehicleList) {
+            this.mainWindow.vehicleModel.addRow(new Object[] { vehicle.ordinal, vehicle.brand, vehicle.year });
+        }
+    }
 
     public void addEventToAddButton(){
         this.mainWindow.addButton.addActionListener(event -> {
@@ -67,13 +75,7 @@ public class MainController {
         });
     }
 
-    public void loadVehicleList(){
-        this.loadVehicle = new LoadVehicle();
-        ArrayList<Vehicle> vehicleList = this.loadVehicle.load();
-        for (Vehicle vehicle : vehicleList) {
-            this.mainWindow.vehicleModel.addRow(new Object[] { vehicle.ordinal, vehicle.brand, vehicle.year });
-        }
-    }
+    
 
     
 
